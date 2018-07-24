@@ -1,0 +1,147 @@
+<ion-searchbar>
+</ion-searchbar>
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>feedback</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+<ion-content padding>
+<style>
+    .container {
+       position: absolute;
+       text-align: center;
+       border-radius: 5px;
+       width: 90%;
+       background-color: #f2f2f2;
+       padding: 20px;
+       margin-top: 20%;
+       margin-bottom: 12px;
+    }
+    textarea{
+    max-width:100%;
+    min-width: 100%;
+  }
+
+   input[type=text]{
+    width:100%;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+
+    textarea[type=text]{
+    width:100%;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+
+    .fa-user:before {
+    content: "\f007";
+}
+    input[type=text]:focus{
+    border-color:#49a7b7;
+    box-shadow:0 0 8px 0 #49A7B7;
+  }
+  
+    textarea[type=text]:focus{
+    border-color:#49a7b7;
+    box-shadow:0 0 8px 0 #49A7B7;
+  }
+    .inputWithIcon input[type=text]{
+    padding-left:40px;
+  }
+  
+    .inputWithIcon textarea[type=text]{
+    padding-left:40px;
+  }
+  
+  .inputWithIcon{
+    position:relative;
+  }
+  
+    .inputWithIcon i {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    padding: 9px 8px;
+    color: #aaa;
+    transition: .3s;
+}
+  
+    .inputWithIcon input[type=text]:focus + i{
+    color:#49a7b7;
+  }
+
+    .inputWithIcon textarea[type=text]:focus + i{
+    color:#49a7b7;
+  }
+  
+  
+  .inputWithIcon.inputIconBg i{
+    background-color:#aaa;
+    color:#fff;
+    padding:9px 4px;
+    border-radius:4px 0 0 4px;
+  }
+  .sub {
+     background-color: #49A7B7;
+     color: white;
+     text-align: center;
+     font-size: 20px;
+     padding: 0px 20px;
+     font-family: ubuntu;
+     width: 50%;
+     height: 42px;
+     border: 1px solid #49A7B7;
+     border-radius: 4px;
+   }
+   .skip{
+     color: #fffefe;
+     border-radius: 5px;
+     text-align: center;
+     font-size: 15px;
+     font-family: ubuntu;
+     margin-top: 430px;
+     float: right;
+     padding: 12px;
+     background-color: #49a7b7;
+   }
+</style>
+    
+    <div class="container">
+        <h4>Give us your feedback</h4>
+        <div class="inputWithIcon">
+            <input type="text" placeholder="Your name">
+            <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+        
+        <div class="inputWithIcon">
+            <input type="text" placeholder="Email">
+            <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+
+        <div class="inputWithIcon">
+         <textarea rows="3" type="text" placeholder="Your comment" ></textarea>
+         <i class="fa fa-comment fa-lg fa-fw" aria-hidden="true"></i>        
+        </div>
+
+         <input class="sub" title="submit" type="submit" value="Submit"><br>
+
+    </div>
+
+
+    <button class="skip">Skip</button>  
+</ion-content>

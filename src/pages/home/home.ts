@@ -7,8 +7,22 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  searchTerm: string = '';
+  items: any;
+
+  constructor(public navCtrl: NavController,) {
 
   }
 
+  ionViewDidLoad() {
+ 
+    this.setFilteredItems();
+
 }
+
+setFilteredItems() {
+
+}
+}
+
+ 
