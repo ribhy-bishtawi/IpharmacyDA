@@ -8,30 +8,39 @@ import { MapPageModule } from './../pages/map/map.module';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { firebaseConfig } from '../config';
+import { ShoppingListProvider } from '../providers/database/database';
+import {AdditemsPage}   from './../pages/additems/additems'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    FeedbackPage
+    FeedbackPage,
+    AdditemsPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    MapPageModule
+    MapPageModule,
+    AngularFireModule.initializeApp(firebaseConfig)
 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    FeedbackPage
+    FeedbackPage,
+    AdditemsPage,
   ],
   providers: [
+    AngularFireDatabase, 
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ShoppingListProvider,
   ]
 })
 export class AppModule {}
