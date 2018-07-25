@@ -7,107 +7,35 @@
   </ion-navbar>
 </ion-header>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+  crossorigin="anonymous">
 
 <ion-content padding>
-<style>
 
 
-.searchTerm {
-  float: left;
-  width: 200px;
-  border: 2.5px solid #49a7b7;
-  padding: 5px;
-  border-radius: 5px;
-  height: 36px;
-}
-
-.searchButton {
-  margin-left: -6px;
-  position: absolute;  
-  width: 40px;
-  height: 36px;
-  border: 1px solid #49a7b7;
-  background: #49a7b7;
-  text-align: center;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.wrap{
-  width: 30%;
-  margin-left: 25px;
-  margin-top: 50px;
-}
-
-.img1{
-  width: 40%;
-    height: 20%;
-    margin-top: 25px;
-}
-
-.img2{
-  margin-left: 16px;
-    width: 40%;
-    height: 20%;
-}
-.img3{
-  width: 40%;
-    height: 20%;
-    margin-top: 25px;
-}
-.img4{
-  margin-left: 16px;
-    width: 40%;
-    height: 20%;
-}
-.img5{
-  width: 40%;
-    height: 20%;
-    margin-top: 25px;
-}
-.img6{
-  margin-left: 16px;
-    width: 40%;
-    height: 20%;
-}
-.container {
-  position: absolute;
-  text-align: center;
-  border-radius: 5px;
-  width: 90%;
-  background-color: #c6d0ce/**#f2f2f2**/;
-  padding: 15px;
-  margin-top: 20%;
-  margin-bottom: 12px;
-    }
-</style>
-
-
-<div class="wrap">
+  <div class="wrap">
     <div class="search">
-       <input type="text" class="searchTerm" placeholder="Search for your medicine">
-       <button type="submit" class="searchButton">
-         <i class="fa fa-search"></i>
-      </button>
+      <ion-input [(ngModel)]="medicine" type="text" class="searchTerm" placeholder="Search for your medicine">
+        </ion-input>
     </div>
- </div>
+  </div>
 
-<div class="container">
+  <div class="container">
+    <h4 class="h4">Select your insurance : {{selectedInsurance}}</h4>
+    <button
+      (click)="selectInsurance(insurance)"
+      *ngFor="let insurance of insuranceProviders"
+      class="insurance-button"
+      [class.selected]="insurance.name === selectedInsurance">
+      <img src="../../assets/imgs/{{insurance.imageUrl}}" class="img">
+    </button>
 
-      <img src="../../assets/imgs/trust1.jpg" class="img1">
-      <img src="../../assets/imgs/tkafl2.png" class="img2">
-    
-
-      <img src="../../assets/imgs/globemed1.jpg" class="img3">
-      <img src="../../assets/imgs/nathealth1.jpg" class="img4">
-
-      <img src="../../assets/imgs/mashreq1.png" class="img5">
-      <img src="../../assets/imgs/ahlia1.png" class="img6">
-
-</div>
-</ion-content> 
+  </div>
+  
+    <button type="submit" class="searchButton">
+        <i class="fa fa fa-search"></i>
+      </button>
 
 
+
+</ion-content>
