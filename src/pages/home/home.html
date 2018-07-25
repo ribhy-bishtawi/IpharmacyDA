@@ -16,26 +16,24 @@
   <div class="wrap">
     <div class="search">
       <ion-input [(ngModel)]="medicine" type="text" class="searchTerm" placeholder="Search for your medicine">
-        </ion-input>
+      </ion-input>
     </div>
   </div>
 
   <div class="container">
     <h4 class="h4">Select your insurance : {{selectedInsurance}}</h4>
-    <button
-      (click)="selectInsurance(insurance)"
-      *ngFor="let insurance of insuranceProviders"
-      class="insurance-button"
-      [class.selected]="insurance.name === selectedInsurance">
+    <button (click)="selectInsurance(insurance)" *ngFor="let insurance of insuranceProviders" class="insurance-button" [class.selected]="insurance.name === selectedInsurance">
       <img src="../../assets/imgs/{{insurance.imageUrl}}" class="img">
     </button>
 
   </div>
-  
-    <button type="submit" class="searchButton">
-        <i class="fa fa fa-search"></i>
-      </button>
+
+  <button type="submit" class="searchButton" (click)="showMap()">
+    <i class="fa fa fa-search"></i>
+  </button>
 
 
+
+  <button (click)="openfeedback()"> feedback </button>
 
 </ion-content>
