@@ -89,7 +89,7 @@
 <div class="wrap">
     <div class="search">
        <input type="text" class="searchTerm" placeholder="Search for your medicine">
-       <button type="submit" class="searchButton">
+       <button type="submit" class="searchButton" (click)="showMap()">
          <i class="fa fa-search"></i>
       </button>
     </div>
@@ -108,7 +108,8 @@
       <img src="../../assets/imgs/ahlia1.png" class="img6">
 
 </div>
-
+  
+  
 <button (click) = "openfeedback()" > feedback </button>
 
 </ion-content> 

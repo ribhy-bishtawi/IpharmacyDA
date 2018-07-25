@@ -1,0 +1,17 @@
+#map {
+    top:0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.directions-control-instructions{
+    background-color: white;
+    opacity:0.8;
+}
+.mapboxgl-ctrl-geocoder{
+    display: none;
+}
+.mapbox-directions-profile {
+    display: none;
+}
