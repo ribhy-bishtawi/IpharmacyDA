@@ -1,3 +1,78 @@
-page-home {
- 
-}
+.searchTerm {
+    float: left;
+    width: 305px;
+    border: 2.5px solid #49a7b7;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: -8px;
+    font-size: 17px;
+    padding-left: 55px
+  }
+
+  .searchButton {
+    margin-top: 380px;
+    margin-left: 123px;
+    width: 90px;
+    height: 40px;
+    border: 1px solid #49a7b7;
+    background: #49a7b7;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    padding-right: 10px;
+  }
+
+  .wrap {
+    width: 30%;
+    margin-left: 25px;
+    margin-top: 50px;
+  }
+
+  .img {
+    height: 46px;
+    width: 95px;
+    margin-left: -18px;
+    margin-bottom: -3px;
+    max-width: 1000px;
+  }
+
+  .insurance-button {
+    border: 2.5px solid #aaa;
+    border-radius: 15px;
+    width: 40%;
+    height: 20%;
+    margin-top: 20px;
+  }
+
+  .insurance-button:nth-of-type(even) {
+      margin-left: 16px;
+  }
+
+  .container {
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    width: 70%;
+    background-color: #f2f2f2;
+    padding: 15px;
+    margin-top: 25%;
+    margin-bottom: 12px;
+    margin-left: 10%;
+  }
+
+  .fa {
+    margin-left: -10px
+  }
+
+  .h4 {
+    color: #49a7b7;
+  }
+
+
+
+  button.selected {
+    border-color: #49a7b7;
+    box-shadow: 0 0 8px 0 #49A7B7;
+  }
