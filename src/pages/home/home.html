@@ -1,5 +1,11 @@
 <ion-header>
-
+  <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+      <div class="Aligner-item Aligner-item--top"></div>
+      <img src="assets/ribhy.png">
+      <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+  </div>  
   <ion-navbar>
     <ion-title>
       I Pharmacy
@@ -15,7 +21,7 @@
 
   <div class="wrap">
     <div class="search">
-      <ion-input [(ngModel)]="medicine" type="text" class="searchTerm" placeholder="Search for your medicine">
+      <ion-input name="medicine"   [(ngModel)]="medicine" type="text" class="searchTerm" placeholder="Search for your medicine">
       </ion-input>
     </div>
   </div>
@@ -35,5 +41,5 @@
 
 
   <button (click)="openfeedback()"> feedback </button>
-  <button (click) = "openfirebas()" > firebase </button>
+  <!-- <button (click) = "openfirebas()" > firebase </button> -->
 </ion-content>
