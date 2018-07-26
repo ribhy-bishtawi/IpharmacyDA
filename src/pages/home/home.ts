@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Loading } from 'ionic-angular';
 import { FeedbackPage } from '../feedback/feedback';
 import { MapPage } from './../map/map';
-import {AdditemsPage} from  './../additems/additems';
+import { Subscriber } from 'rxjs/Subscriber';
+import { AdditemsPage } from './../additems/additems';
+import { ShoppingListProvider } from './../../providers/database/database';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'page-home',
@@ -12,43 +15,51 @@ export class HomePage {
 
   searchTerm: string = '';
   items: any;
-  medicine:string;
+  medicine: string;
   insuranceProviders = [
-    {name: "Trust", imageUrl: "trust1.jpg"},
-    {name: "Takaful", imageUrl: "tkafl1.png"},
-    {name: "Globemed", imageUrl: "globemed1.jpg"},
-    {name: "Nathealth", imageUrl: "nathealth1.jpg"},
-    {name: "Mashreq", imageUrl: "mashreq1.png"},
-    {name: "Ahlia", imageUrl: "ahlia1.png"},
+    { name: "Trust", imageUrl: "trust1.jpg" },
+    { name: "Takaful", imageUrl: "tkafl1.png" },
+    { name: "Globemed", imageUrl: "globemed1.jpg" },
+    { name: "Nathealth", imageUrl: "nathealth1.jpg" },
+    { name: "Mashreq", imageUrl: "mashreq1.png" },
+    { name: "Ahlia", imageUrl: "ahlia1.png" },
   ];
-  selectedInsurance:string;
+  selectedInsurance: string;
 
-  constructor(public navCtrl: NavController,) {   
+  constructor(public navCtrl: NavController, private db: ShoppingListProvider) {
   }
-  openfeedback(){
+  openfeedback() {
     this.navCtrl.push(FeedbackPage)
   };
 
-  openfirebas(){
+  openfirebas() {
     this.navCtrl.push(AdditemsPage)
 
   }
   showMap() {
-        this.navCtrl.push(MapPage);
+    this.db.getPharmacies().pipe(first()).subscribe(pharmacies => {
+      
+      for (let pharmacy of pharmacies) {
+        console.log(pharmacy);
       }
+      this.navCtrl.push(MapPage, {
+        location: [ 35.183548,31.947758 ]
+      });
+    });
+  }
   ionViewDidLoad() {
- 
+
     this.setFilteredItems();
 
+  }
+
+  selectInsurance(insurance1) {
+    this.selectedInsurance = insurance1.name;
+  }
+
+  setFilteredItems() {
+
+  }
 }
 
-selectInsurance(insurance1) {
-  this.selectedInsurance = insurance1.name;
-}
 
-setFilteredItems() {
-
-}
-}
-
- 

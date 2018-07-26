@@ -12,11 +12,11 @@ export class AdditemsPage {
  items: Observable<any>;
  newItemName:string;
  Location: string;
- PhoneNumber: number;
+ PhoneNumber: string;
  Insurancees: string;
  MedicinesName: string;
- //31.966600,35.193686  lana 
-// 31.968923, 35.19300 3alloosh
+ //35.193686,31.966600  lana 
+// 35.1930031.968923,  3alloosh
 
  constructor(public navCtrl: NavController, public shoppingListProvider: ShoppingListProvider) {
    this.items = shoppingListProvider.getItems();

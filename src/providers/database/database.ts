@@ -9,6 +9,10 @@ export class ShoppingListProvider {
    return this.db.list('Pharmacy').snapshotChanges();
  }
 
+ getPharmacies() {
+  return this.db.list('Pharmacy').valueChanges();
+}
+
  addItem(Name,Location,PhoneNumber,insurance,Medicine) {
    this.db.list('Pharmacy').push({
      Name,

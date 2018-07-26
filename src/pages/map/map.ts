@@ -19,8 +19,10 @@ export class MapPage {
   map: any;
   directions: any;
   duration: number;
+  destination: any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.destination = navParams.get('location');
   }
 
   ionViewDidLoad() {
@@ -49,7 +51,7 @@ export class MapPage {
       if (data.dataType === 'source' && data.isSourceLoaded) {
         console.log('data loaded', data);
         this.directions.setOrigin([35.190017, 31.942860]);
-        this.directions.setDestination([ 35.183548,31.947758 ])
+        this.directions.setDestination(this.destination)
         ;
         this.directions.on('route', routes => {
           if (routes.route.length === 0) return;
