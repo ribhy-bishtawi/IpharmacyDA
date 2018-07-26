@@ -1,4 +1,7 @@
+import { ContactPage } from './../pages/contact/contact';
 import { FeedbackPage } from './../pages/feedback/feedback';
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -6,8 +9,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MapPageModule } from './../pages/map/map.module';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { firebaseConfig } from '../config';
@@ -20,6 +21,7 @@ import {AdditemsPage}   from './../pages/additems/additems'
     HomePage,
     FeedbackPage,
     AdditemsPage,
+    ContactPage
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import {AdditemsPage}   from './../pages/additems/additems'
     HomePage,
     FeedbackPage,
     AdditemsPage,
+    ContactPage
   ],
   providers: [
     AngularFireDatabase, 

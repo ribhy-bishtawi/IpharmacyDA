@@ -1,0 +1,77 @@
+page-contact{
+
+
+.container {
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    width: 90%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 20%;
+    margin-left: 0px;
+ }
+
+ .h4 {
+    color: #49a7b7;
+    font-size: 17px;
+  }
+
+input[type=text]{
+    width:100%;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+    margin-top: 40px;
+}
+
+ input[type=text]:focus{
+ border-color:#49a7b7;
+ box-shadow:0 0 8px 0 #49A7B7;
+}
+
+ .inputWithIcon input[type=text]{
+ padding-left:40px;
+}
+
+.inputWithIcon{
+ position:relative;
+}
+
+.inputWithIcon i {
+ position: absolute;
+ left: 0;
+ top: 9px;
+ padding: 9px 8px;
+ color: #aaa;
+ transition: .3s;
+ margin-left: 3px;
+ color:#aaa;
+ padding:9px 4px;
+ border-radius:4px 0 0 4px;
+ margin-top: 34px;
+}
+
+.inputWithIcon input[type=text]:focus + i{
+ color:#49a7b7;
+}
+
+
+.sub {
+  background-color: #49A7B7;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: ubuntu;
+  width: 45%;
+  height: 35px;
+  border: 1px solid #49A7B7;
+  border-radius: 5px;
+  padding-left: 14px;
+  margin-top: 40px;
+}
+}
