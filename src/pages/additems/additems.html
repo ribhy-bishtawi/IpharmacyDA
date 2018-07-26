@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Add Item to Database
+    </ion-title>
+   
+  </ion-navbar>
+ </ion-header>
+ 
+ <ion-content>
+  <ion-row>
+    <ion-col col-9>
+      <ion-item>
+        <ion-input [(ngModel)]="newItemName" type="text" placeholder="Name"></ion-input>
+        <ion-input [(ngModel)]="Location" type="text" placeholder="Location"></ion-input>
+        <ion-input [(ngModel)]="PhoneNumber" type="text" placeholder="Phone Number"></ion-input>
+        <ion-input [(ngModel)]="Insurancees" type="text" placeholder="Insurance"></ion-input>
+        <ion-input [(ngModel)]="MedicinesName" type="text" placeholder="Medicines"></ion-input>
+
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <button ion-button (click)="addItem()">Add!</button>
+    </ion-col>
+  </ion-row>
+ 
+  <!-- <ion-list>
+    <ion-item-sliding *ngFor="let item of items | async">
+      <ion-item>
+        {{ item.payload.val().name }} ({{ item.payload.val().author }})
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" icon-only (click)="removeItem(item.key)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> -->
+ </ion-content>
+ 
+ 

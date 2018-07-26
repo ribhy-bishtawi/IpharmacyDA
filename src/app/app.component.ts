@@ -1,5 +1,4 @@
 import { HomePage } from './../pages/home/home';
-import { FeedbackPage } from './../pages/feedback/feedback';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
