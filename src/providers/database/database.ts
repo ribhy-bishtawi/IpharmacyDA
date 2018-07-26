@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import firebase from 'firebase';
 
 @Injectable()
 export class ShoppingListProvider {
+  public PharmacyRef:firebase.database.Reference;
+  public pharmacylist:Array<any>;
+  public loadedPharmacyList:Array<any>;
+
  constructor(public db: AngularFireDatabase) { }
 
  getItems() {
@@ -25,6 +30,19 @@ export class ShoppingListProvider {
 
  removeItem(id) {
    this.db.list('Pharmacy').remove(id);
+ }
+ filter(){
+  this.PharmacyRef = firebase.database().ref('/Pharmacy');
+  this.PharmacyRef.on('value', pharmacylist => {
+    let pharmacies = [];
+    pharmacylist.forEach( pharmacy => {
+      pharmacies.push(pharmacy.val());
+      return false;
+    });
+
+    this.pharmacylist = pharmacies;
+    this.loadedPharmacyList = pharmacies;
+  });
  }
 }
 

@@ -20,13 +20,16 @@ export class MapPage {
   directions: any;
   duration: number;
   destination: any;
+  pharmacy: any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.destination = navParams.get('location');
+    this.pharmacy = navParams.get('pharmacy');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPage');
+    const currentLocation = this.navParams.get("currentLocation")
+    const pharmacyLongLat = this.pharmacy['Location'].split(",").map(x => parseFloat(x));
     mapboxgl.accessToken = 'pk.eyJ1IjoicmliaHliaXNoIiwiYSI6ImNqazB0bTQzeDAxa2szcG54MXQ1dnd1NTIifQ.4Z1_RzWi98bYoUmZ2nfFtw';
     this.directions = new MapboxDirections({
       accessToken: mapboxgl.accessToken,
@@ -36,7 +39,7 @@ export class MapPage {
     });
     this.map = new mapboxgl.Map({
       container: 'map',
-       center: [35.2000,31.9000],
+       center: currentLocation,
       zoom: 11,
       style: 'mapbox://styles/mapbox/streets-v10'
     });
@@ -50,8 +53,8 @@ export class MapPage {
     const mapLoadHandler = data => {
       if (data.dataType === 'source' && data.isSourceLoaded) {
         console.log('data loaded', data);
-        this.directions.setOrigin([35.190017, 31.942860]);
-        this.directions.setDestination(this.destination)
+        this.directions.setOrigin(currentLocation);
+        this.directions.setDestination(pharmacyLongLat);
         ;
         this.directions.on('route', routes => {
           if (routes.route.length === 0) return;
