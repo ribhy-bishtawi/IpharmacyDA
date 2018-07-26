@@ -1,12 +1,12 @@
 .searchTerm {
     float: left;
-    width: 305px;
-    border: 2.5px solid #49a7b7;
+    width: 330px;
     border-radius: 5px;
     height: 40px;
     margin-left: -8px;
     font-size: 17px;
-    padding-left: 55px
+    margin-left: -35px;
+    padding-left: 25px;
   }
 
   .searchButton {
@@ -69,8 +69,6 @@
   .h4 {
     color: #49a7b7;
   }
-
-
 
   button.selected {
     border-color: #49a7b7;
