@@ -5,7 +5,7 @@
       <img src="assets/ribhy.png">
       <div class="Aligner-item Aligner-item--bottom"></div>
     </div>
-  </div>  
+  </div>
   <ion-navbar>
     <ion-title>
       I Pharmacy
@@ -16,40 +16,27 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
   crossorigin="anonymous">
 
-<ion-content padding>
+<ion-content>
 
 
   <div class="wrap">
-<<<<<<< HEAD
     <div class="search">
-      <ion-input name="medicine"   [(ngModel)]="medicine" type="text" class="searchTerm" placeholder="Search for your medicine">
-=======
-    <div>
-      <ion-input [(ngModel)]="medicine" type="text" class="searchTerm" placeholder="Search for your medicine">
->>>>>>> 368ba109d280dde5dd05809eba4039dc04c12481
+      <ion-input name="medicine" [(ngModel)]="medicine" type="text" class="searchTerm" placeholder="Search for your medicine">
       </ion-input>
     </div>
-  </div>
 
-  <div class="container">
-    <h4 class="h4">Select your insurance : {{selectedInsurance}}</h4>
-    <button (click)="selectInsurance(insurance)" *ngFor="let insurance of insuranceProviders" class="insurance-button" [class.selected]="insurance.name === selectedInsurance">
-      <img src="../../assets/imgs/{{insurance.imageUrl}}" class="img">
+    <div class="container">
+      <h4 class="h4">Select your insurance : {{selectedInsurance}}</h4>
+      <button (click)="selectInsurance(insurance)" *ngFor="let insurance of insuranceProviders" class="insurance-button" [class.selected]="insurance.name === selectedInsurance">
+        <img src="../../assets/imgs/{{insurance.imageUrl}}" class="img">
+      </button>
+
+    </div>
+
+    <button type="submit" class="searchButton" (click)="showMap()">
+      <i class="fa fa fa-search"></i>
     </button>
 
-  </div>
-
-  <button type="submit" class="searchButton" (click)="showMap()">
-    <i class="fa fa fa-search"></i>
-  </button>
-
-
-
-<<<<<<< HEAD
-  <button  (click)="openfeedback()"> Feedback </button>
-  <button  (click)="opencontact()"> Contact </button>
-=======
-  <button (click)="openfeedback()"> feedback </button>
-  <!-- <button (click) = "openfirebas()" > firebase </button> -->
->>>>>>> 07a1ab1afea20f9ac6227b0fd4dcc9895d5bee37
+    <button (click)="openfeedback()"> Feedback </button>
+    <button (click)="opencontact()"> Contact </button>
 </ion-content>

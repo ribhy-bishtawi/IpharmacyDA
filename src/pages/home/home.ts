@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, Loading } from 'ionic-angular';
 import { ContactPage } from '../contact/contact';
+
 import { FeedbackPage } from '../feedback/feedback';
 import { MapPage } from './../map/map';
 import { Subscriber } from 'rxjs/Subscriber';
@@ -39,15 +40,9 @@ export class HomePage {
 
 
   }
-
   openfeedback() {
     this.navCtrl.push(FeedbackPage)
   };
-
-  opencontact() {
-    this.navCtrl.push(ContactPage)
-  };
-
 
   openfirebas() {
     this.navCtrl.push(AdditemsPage)
@@ -73,7 +68,7 @@ export class HomePage {
         //TODO: check if valid pharmacy
         if (this.medicine &&
           !this.isStringInCommaDelimitedString(pharmacy['Medicine'], this.medicine)) {
-          console.log("hi")
+          
         }
         if (this.selectedInsurance &&
           !this.isStringInCommaDelimitedString(pharmacy['insurance'], this.selectedInsurance)) {
